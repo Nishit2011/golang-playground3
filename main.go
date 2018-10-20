@@ -3,18 +3,18 @@ package main
 import "fmt"
 
 func main() {
+	//[string] refers to type of key while string refers to type of value
+	colors := map[string]string{
+		"red":   "#ff0000",
+		"green": "4bf745",
+		"white": "#ffffff",
+	}
 
-	//alternate way to declare maps
-	//var colors map[string]string
+	printMap(colors)
+}
 
-	colors := make(map[string]string)
-	// colors := map[string]string{
-	// 	"red":   "#ff0000",
-	// 	"green": "4bf745",
-	// }
-
-	colors["white"] = "#ffffff"
-	//delete the key-value pair with key of white
-	delete(colors, "white")
-	fmt.Println(colors)
+func printMap(c map[string]string) {
+	for color, hex := range c {
+		fmt.Println("Hex code for", color, "is", hex)
+	}
 }
